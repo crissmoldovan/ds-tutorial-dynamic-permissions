@@ -1,0 +1,28 @@
+# User A
+userA:
+  password: "usera-pass"
+  serverData:
+    permissionRecord: "permissions/usera"
+  clientData:
+    permissionRecord: "permissions/usera"
+# User B
+userB:
+  password: "userb-pass"
+  serverData:
+    permissionRecord: "permissions/userb"
+  clientData:
+    permissionRecord: "permissions/userb"
+# User A
+userC:
+  password: "userc-pass"
+  serverData:
+    permissionRecord: "permissions/userc"
+  clientData:
+    permissionRecord: "permissions/userc"
+
+
+permissions/userc: {
+  green: true,
+  blue: false,
+  red: true
+}

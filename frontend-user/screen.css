@@ -1,0 +1,82 @@
+*{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	font: 12px/16px Arial, sans-serif;
+	color: #333;
+}
+
+html, body{
+	height: 100%;
+	background: #fafafa;
+}
+
+.wrapper{
+	width: 400px;
+	margin: 20px auto;
+	background: #fff;
+	border:1px solid #ccc;
+	border-radius: 5px;
+	padding: 20px;
+}
+
+form.login{
+	position: relative;
+}
+
+form.login label{
+	display: block;
+}
+
+form.login input{
+	display: block;
+	margin-bottom: 16px;
+}
+
+form.login input{
+	width: 100%;
+	padding: 5px;
+	display: block;
+	box-sizing: border-box;
+}
+
+form.login input[type="submit"]{
+	background: #fafafa;
+	border: 1px solid #ccc;
+	font-weight: bold;
+	padding: 10px;
+	cursor: pointer;
+}
+
+form.login input[type="submit"]:hover{
+	background: #ccc;
+}
+
+.buttons{
+	text-align: center;
+}
+
+.buttons button{
+	padding: 20px;
+	font-weight: bold;
+	width: 100px;
+	margin: 0 10px;
+}
+
+.buttons button[disabled]{
+	color: #999!important;
+	background: #eee;
+	border: 1px solid #ddd;
+}
+
+.buttons button.green{
+	color: green;
+}
+
+.buttons button.red{
+	color: red;
+}
+
+.buttons button.blue{
+	color: blue;
+}
