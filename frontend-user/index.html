@@ -1,26 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>User Frontend</title>
+	<title>Frontend</title>
 	<script type="text/javascript" src="../node_modules/deepstream.io-client-js/dist/deepstream.js"></script>
 	<script type="text/javascript" src="../node_modules/knockout/build/output/knockout-latest.js"></script>
+	<script type="text/javascript" src="../node_modules/deepstream.io-tools-ko/dist/ko-tools.js"></script>
 	<link rel="stylesheet" type="text/css" href="screen.css" />
 </head>
 <body>
 	<div class="wrapper">
-		<form action="#" class="login" data-bind="submit:login">
+		<form action="#" class="login" data-bind="submit:login, visible: !role()">
 			<label for="username">username</label>
 			<input type="text" name="username" data-bind="textInput:username"/>
 			<label for="password">password</label>
 			<input type="password" name="password" data-bind="textInput:password"/>
 			<input type="submit" value="login" />
+
+			<div class="invalid-credentials" data-bind="visible: showInvalidCredentials">
+				Invalid credentials!
+			</div>
 		</form>
-		<div class="buttons">
-			<button class="green" disabled>green</button>
-			<button class="red">red</button>
-			<button class="blue">blue</button>
-		</div>
+		<!-- ko if: role -->
+			<div class="global-color">
+				The global color is <span data-bind="text: globalColor, style:{color: globalColor}"></span>
+			</div>
+			<!-- ko template:{name: role() + '-template', data: content } --><!-- /ko -->
+    	<!-- /ko -->
 	</div>
+
+	<script type="text/html" id="user-template">
+		<div class="user">
+			<h2>Hi <span data-bind="text: username"></span>!</h2>
+			<button class="green" data-bind="enable: greenAllowed, click: setColor.bind( $data, 'green')">green</button>
+			<button class="red" data-bind="enable: redAllowed, click: setColor.bind( $data, 'red')">red</button>
+			<button class="blue" data-bind="enable: blueAllowed, click: setColor.bind( $data, 'blue')">blue</button>
+		</div>
+	</script>
+
+	<script type="text/html" id="admin-template">
+	   <table class="admin">
+	   		<thead>
+	   			<tr>
+	   				<th></th>
+	   				<th class="green">green</th>
+	   				<th class="red">red</th>
+	   				<th class="blue">blue</th>
+	   			</tr>
+	   		</thead>
+	   		<tbody data-bind="foreach: users">
+	   			<tr>
+	   				<td class="username" data-bind="text: username"></td>
+	   				<td><input type="checkbox" data-bind="checked: greenAllowed" /></td>
+	   				<td><input type="checkbox" data-bind="checked: redAllowed" /></td>
+	   				<td><input type="checkbox" data-bind="checked: blueAllowed" /></td>
+	   			</tr>
+	   		</tbody>
+	   </table>
+	</script>
+
 	<script type="text/javascript" src="start.js"></script>
 </body>
 </html>

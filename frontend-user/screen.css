@@ -14,10 +14,19 @@ html, body{
 .wrapper{
 	width: 400px;
 	margin: 20px auto;
+}
+
+.global-color,
+.global-color *{
+	font-weight: bold;
+}
+
+.wrapper > *{
 	background: #fff;
 	border:1px solid #ccc;
 	border-radius: 5px;
 	padding: 20px;
+	margin-bottom: 20px;
 }
 
 form.login{
@@ -52,31 +61,82 @@ form.login input[type="submit"]:hover{
 	background: #ccc;
 }
 
-.buttons{
+.user{
 	text-align: center;
 }
 
-.buttons button{
+.user button{
 	padding: 20px;
 	font-weight: bold;
-	width: 100px;
+	width: 96px;
+	cursor: pointer;
 	margin: 0 10px;
 }
 
-.buttons button[disabled]{
+.user button[disabled]{
+	cursor: default;
 	color: #999!important;
 	background: #eee;
 	border: 1px solid #ddd;
 }
 
-.buttons button.green{
+.user button.green{
 	color: green;
 }
 
-.buttons button.red{
+.user button.red{
 	color: red;
 }
 
-.buttons button.blue{
+.user button.blue{
 	color: blue;
+}
+
+h2{
+	font-size: 20px;
+	margin-bottom: 20px;
+}
+
+h2 span{
+	font-size: inherit;
+}
+
+.invalid-credentials{
+    border: 1px solid #b10808;
+    background: #ffeaea;
+    color: #b10808;
+    font-weight: bold;
+    padding: 5px 0;
+    text-align: center;
+}
+
+table.admin{
+	width: 100%;
+	border-collapse: collapse;
+	font-weight: bold;
+}
+
+table.admin th,
+table.admin td{
+	padding: 3px 0;
+	border: 1px solid #ccc;
+	text-align: center;
+	font-weight: bold;
+	vertical-align: middle;
+}
+
+table.admin th.green{
+	color: green;
+}
+
+table.admin th.red{
+	color: red;
+}
+
+table.admin th.blue{
+	color: blue;
+}
+
+table.admin td.username{
+	text-align: center;
 }

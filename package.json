@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start-server-win": "./deepstream-win/deepstream.exe -c server-config/config.yml"
+    "start-server-win": "deepstream-win/deepstream.exe start -c server-config/config.yml"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   "homepage": "https://github.com/deepstreamIO/ds-tutorial-dynamic-permissions#readme",
   "dependencies": {
     "deepstream.io-client-js": "^1.1.1",
+    "deepstream.io-tools-ko": "0.0.6",
     "knockout": "^3.4.0"
   }
 }

@@ -3,26 +3,33 @@ userA:
   password: "usera-pass"
   serverData:
     permissionRecord: "permissions/usera"
+    role: "user"
   clientData:
     permissionRecord: "permissions/usera"
+    role: "user"
 # User B
 userB:
   password: "userb-pass"
   serverData:
     permissionRecord: "permissions/userb"
+    role: "user"
   clientData:
     permissionRecord: "permissions/userb"
-# User A
+    role: "user"
+# User C
 userC:
   password: "userc-pass"
   serverData:
     permissionRecord: "permissions/userc"
+    role: "user"
   clientData:
     permissionRecord: "permissions/userc"
-
-
-permissions/userc: {
-  green: true,
-  blue: false,
-  red: true
-}
+    role: "user"
+# Admin
+admin:
+  password: "admin-pass"
+  serverData:
+    permissionRecord: "permissions/none"
+    role: "admin"
+  clientData:
+    role: "admin"

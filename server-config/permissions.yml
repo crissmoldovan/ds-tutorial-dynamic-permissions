@@ -3,8 +3,14 @@ record:
     create: true
     write: true
     read: true
-    delete: true
+    delete: false
     listen: true
+
+  "global-color":
+    write: "_(user.data.permissionRecord)[data.color]"
+
+  "permissions/*":
+    write: "user.data.role === 'admin'"
 event:
   "*":
     publish: true
