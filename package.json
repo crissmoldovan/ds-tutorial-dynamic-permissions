@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/deepstreamIO/ds-tutorial-dynamic-permissions#readme",
   "dependencies": {
-    "deepstream.io-client-js": "^1.1.1",
+    "deepstream.io-client-js": "^2.1.4",
     "deepstream.io-tools-ko": "0.0.6",
     "knockout": "^3.4.0"
   }
